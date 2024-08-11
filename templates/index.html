@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <title>Sign Engine</title>
+    <link rel="icon" type="image/x-icon" href="static\images\icon.png">
+</head>
+<body id="canvas">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top animate__animated animate__fadeIn animate__delay-1s">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='images/icon.png') }}" alt="img">Sign Engine</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#About">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Repo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#accordionFlushExample">FAQ</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Guide
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Implementation</a></li>
+                  <li><a class="dropdown-item" href="#">Dependancies</a></li>
+                  <li><a class="dropdown-item" href="#">Download Resources</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">For more visit our website</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Upcomings
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Custom Gestures</a></li>
+                  <li><a class="dropdown-item" href="#">Voice Feedback</a></li>
+                  <li><a class="dropdown-item" href="#">Audio to Sign</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Games</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-light" id="changeGradientBtn"><i class="fa-solid fa-repeat"></i></button>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" id="buttonNav" href="#space">Get Started</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container ">
+      <div class="start">
+        <div class="info animate__animated animate__fadeIn animate__delay-0.8s">
+          <h1>Empowering Communication</h1>
+          <h3>Instant Sign Language Recognition and Translation</h3>
+          <button class="getStartedBtn" type="submit">Get Started</button>
+        </div>
+        <!-- <div class="start_img">
+          <img src="{{ url_for('static', filename='images/sign-removebg-preview.png') }}" alt="img">
+        </div> -->
+        <div class="info2 animate__animated animate__fadeInLeft animate__delay-0.5s">
+          <h1>Unlock exclusive features and content!</h1>
+          <form class="row row-cols-lg-auto g-3 align-items-center animate_animated animate__fadeInLeftBig">
+            <p>Your privacy is our priority. We do not share your information with third-party websites.</p>
+            <div class="col-12">
+              <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+              <div class="input-group">
+                <div class="input-group-text">@</div>
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label class="visually-hidden" for="inlineFormInputGroupUsername">Email</label>
+              <div class="input-group">
+                <div class="input-group-text">@</div>
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Email">
+              </div>
+            </div>
+          
+            <div class="col-12">
+              <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+              <select class="form-select" id="inlineFormSelectPref">
+                <option selected>Select Proffession</option>
+                <option value="1">Student</option>
+                <option value="2">Teacher</option>
+                <option value="3">Kid</option>
+              </select>
+            </div>
+          
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                <label class="form-check-label" for="inlineFormCheck">
+                  Remember me
+                </label>
+              </div>
+            </div>
+          
+            <div class="col-12">
+              <button type="submit" class="btn1 btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- <button class="getStartedBtn" type="submit">Get Started</button> -->
+
+      <hr class="custom-hr">
+
+      <div id="About">
+        <h1>ABOUT</h1>
+        <div class="getStarted">
+            <p>Welcome to Sign Engine, your go-to platform for seamless and intuitive sign language detection. Our advanced technology leverages cutting-edge computer vision and machine learning algorithms to translate sign language into text and speech in real-time. Whether you're a researcher, educator, or part of the deaf and hard-of-hearing community, SignLang Detect offers an accessible and user-friendly tool to enhance communication and understanding. Get started now to experience the future of sign language interpretation with our easy-to-use interface and robust performance. Explore our features, watch our demo, and join us in making communication more inclusive for everyone!</p>
+        </div>
+        <button id="toggleButton">see more >></button>
+
+        <div class="container text-center" id="infoContainer" style="display: none;">
+            <div class="row align-items-start">
+                <div class="col">
+                    <h1>About Sign Engine</h1>
+                    <h3>Welcome to Sign Engine, a revolutionary platform developed by Deimos Pvt Ltd for real-time sign language detection and translation. Powered by OpenCV, our cutting-edge technology enables accurate recognition and translation of sign language gestures, bridging communication gaps effortlessly</h3>
+                    <h2>Technology Stack</h2>
+                    <h3>Sign Engine is built using a powerful combination of state-of-the-art technologies, including:
+                        <li>Computer Vision: Utilizing OpenCV for real-time hand gesture recognition.</li><br>
+                        <li>Machine Learning: Leveraging TensorFlow/Keras for accurate and efficient sign language translation.</li><br>
+                        <li>WebRTC: For seamless video streaming and real-time processing.</li><br>
+                        <li>Flask: Backend framework to manage server-side operations.</li><br>
+                        <li>Streamlit: For creating an interactive and user-friendly web application.</li>
+                    </h3>
+                </div>
+                <div class="col">
+                    <h1>Key Features</h1>
+                    <h3>
+                        <li>Real-Time Sign Language Predictions: Seamlessly detect and translate sign language gestures using your webcam, with immediate feedback and visual annotations.</li><br>
+                        <li>User-Friendly Interface: Navigate effortlessly through an intuitive design that enhances user experience and accessibility.</li><br>
+                        <li>Customizable Settings: Adjust detection and translation parameters to fit various contexts, from educational purposes to professional interactions.</li>
+                    </h3>
+                    <h2>Upcoming Add-Ons</h2>
+                    <h3>
+                        <li>Gesture Recognition: Expand capabilities to recognize a broader range of gestures for more comprehensive sign language translation.</li><br>
+                        <li>Text and Speech Translation: Convert sign language into text and speech, facilitating smoother interactions and understanding.</li><br>
+                        <li>Face Recognition: Implement advanced face recognition technology to better interpret emotions and expressions, enhancing the depth of communication.</li>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="custom-hr">
+      
+      <div id="space">
+        <div id="main">
+          <div class="btn-group" style="margin-bottom: 10px;">
+            <button id="showLiveBtn" class="btn btn-secondary active">Convert Live Sign to Text</button>
+            <button id="showToEngBtn" class="btn btn-secondary">Convert Text to Sign</button>
+          </div>
+          
+          <div class="ToEng" style="display: none;">
+            <h1>Convert Text To Sign</h1>
+            <p>Enter your text and click 'Convert' to see the corresponding sign language gestures displayed. The system will visualize the sign language translation in real-time.</p>
+          
+            <div class="form-floating" id="text-form">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+              <label for="floatingTextarea">Enter the word</label>
+            </div>
+            <button id="startStopBtnConvert" class="btn btn-primary">Convert</button> 
+          
+            <div id="signImages" style="margin-top: 20px;">
+              <!-- Images will be displayed here -->
+            </div>
+          </div>
+
+          <div id="Live">
+            <h1>Live Webcam</h1>
+            <p>Click 'Start' to begin the video capture. The system will automatically detect and translate sign language gestures in real-time. Click 'Stop' to end the video capture.</p>
+            <img id="videoFeed" src="" width="100%" style="display: none;" />
+            <button id="startStopBtn" class="btn btn-primary">Start</button> 
+          </div>
+        </div> 
+      </div>
+
+      <hr class="custom-hr">
+
+      <div class="main-carousel">
+        <h1>Upcomings</h1>
+        <div id="carouselExampleCaptions" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{{ url_for('static', filename='images/gesture.jpg') }}" class="d-block w-100" alt="My Image">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Gesture Translation</h5>
+                <p>Introducing Gesture Translation: seamlessly convert sign language gestures into text on our website for a more intuitive and accessible communication experience.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{{ url_for('static', filename='images/audio.jpg') }}" class="d-block w-100" alt="My Image">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Sign Language to Audio</h5>
+                <p>Effortlessly convert sign language into spoken words for seamless communication.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{{ url_for('static', filename='images/kidGame.jpg') }}" class="d-block w-100" alt="My Image">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Sign Games</h5>
+                <p>Fun and interactive games to teach sign language in an engaging way.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>  
+
+      <hr class="custom-hr">
+
+
+
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <h1>FAQ</h1>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              How does the real-time sign language conversion feature work?
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Our real-time sign language conversion feature uses advanced computer vision and machine learning technologies. The system captures video from your webcam and processes each frame to detect hand movements and gestures. These gestures are then matched to predefined sign language signs using a trained deep learning model. The recognized signs are converted into text and displayed in real time on the screen.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              What should I do if the sign language recognition is not accurate?
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">If you notice that the sign language recognition is not accurate, please ensure that you have good lighting and that your hands are clearly visible in the webcam feed. Make sure there are no obstructions or background noise that might interfere with detection. Additionally, ensure that your hands are positioned within the camera's view and follow the gestures as accurately as possible. If issues persist, you can try recalibrating your webcam or reaching out to our support team for further assistance.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Is there a way to improve the system’s accuracy?
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Yes, you can improve the system's accuracy by ensuring that you are using a high-quality webcam and providing adequate lighting. Clear and unobstructed hand movements help the model to better recognize gestures. Additionally, you can calibrate your system by following the on-screen instructions for optimal positioning and gesture performance. Regular updates and improvements to the underlying machine learning model also contribute to enhanced accuracy over time.</div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    <footer>
+      <div class="copyright"><p>&copy; 2024 Deimos Pvt Ltd. All rights reserved.</p></div>
+          <div class="col1">
+            <p>
+                <a href="/privacy-policy">Privacy Policy</a> |
+                <a href="/terms-of-service">Terms of Service</a>
+            </p>
+          </div>
+          <div class="col1">
+            <p>
+              Follow us on:
+              <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a> |
+              <a href="https://facebook.com/yourprofile" target="_blank">Facebook</a> |
+              <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+            </p>
+          </div>
+          <div class="col1">
+            <p>Developer:  <a href="">Deimos Pvt Ltd</a></p>
+          </div>
+    </footer>
+
+
+
+
+    <script>
+      document.getElementById('toggleButton').addEventListener('click', function() {
+          var container = document.getElementById('infoContainer');
+          var button = document.getElementById('toggleButton');
+
+          if (container.style.display === 'none' || container.style.display === '') {
+              container.style.display = 'block';
+              button.textContent = 'see less <<';
+          } else {
+              container.style.display = 'none';
+              button.textContent = 'see more >>';
+          }
+      });
+    </script>
+
+
+    <script>
+      const startStopBtn = document.getElementById('startStopBtn');
+      const videoFeed = document.getElementById('videoFeed');
+      let isVideoPlaying = false;
+
+      startStopBtn.addEventListener('click', () => {
+        if (isVideoPlaying) {
+          stopVideo();
+        } else {
+          startVideo();
+        }
+      });
+
+      function startVideo() {
+        videoFeed.src = "{{ url_for('video') }}";
+        videoFeed.style.display = 'block';
+        startStopBtn.textContent = 'Stop';
+        isVideoPlaying = true;
+      }
+
+      function stopVideo() {
+        videoFeed.src = "";
+        videoFeed.style.display = 'none';
+        startStopBtn.textContent = 'Start';
+        isVideoPlaying = false;
+      }
+    </script>
+
+    <script>
+      const liveDiv = document.getElementById('Live');
+      const toEngDiv = document.querySelector('.ToEng');
+      const showLiveBtn = document.getElementById('showLiveBtn');
+      const showToEngBtn = document.getElementById('showToEngBtn');
+    
+      showLiveBtn.addEventListener('click', () => {
+        liveDiv.style.display = 'block';
+        toEngDiv.style.display = 'none';
+        showLiveBtn.classList.add('active');
+        showToEngBtn.classList.remove('active');
+      });
+    
+      showToEngBtn.addEventListener('click', () => {
+        liveDiv.style.display = 'none';
+        toEngDiv.style.display = 'block';
+        showToEngBtn.classList.add('active');
+        showLiveBtn.classList.remove('active');
+      });
+    </script>
+
+    <script>
+      // New script to handle gradient change
+      const changeGradientBtn = document.getElementById('changeGradientBtn');
+      const body = document.body;
+
+      const baseGradients = [
+        ['rgb(0, 0, 255)', 'rgb(138, 43, 226)', 'rgb(75, 0, 130)'], // Blue, Violet, Purple
+        ['rgb(70, 130, 180)', 'rgb(128, 0, 128)', 'rgb(85, 26, 139)'], // Steel Blue, Purple, Dark Slate Blue
+        ['rgb(100, 149, 237)', 'rgb(148, 0, 211)', 'rgb(75, 0, 130)'], // Cornflower Blue, Dark Violet, Purple
+        ['rgb(0, 0, 139)', 'rgb(186, 85, 211)', 'rgb(139, 0, 139)'], // Dark Blue, Medium Orchid, Dark Magenta
+        ['rgb(123, 104, 238)', 'rgb(72, 61, 139)', 'rgb(147, 112, 219)'], // Medium Slate Blue, Dark Slate Blue, Medium Purple
+        ['rgb(106, 90, 205)', 'rgb(102, 51, 153)', 'rgb(75, 0, 130)'], // Slate Blue, Rebecca Purple, Purple
+        ['rgb(186, 85, 211)', 'rgb(75, 0, 130)', 'rgb(153, 50, 204)'], // Medium Orchid, Purple, Dark Orchid
+        ['rgb(123, 104, 238)', 'rgb(148, 0, 211)', 'rgb(139, 0, 139)'], // Medium Slate Blue, Dark Violet, Dark Magenta
+        ['rgb(72, 61, 139)', 'rgb(102, 51, 153)', 'rgb(123, 104, 238)'], // Dark Slate Blue, Rebecca Purple, Medium Slate Blue
+        ['rgb(85, 26, 139)', 'rgb(147, 112, 219)', 'rgb(138, 43, 226)'] // Dark Slate Blue, Medium Purple, Violet
+      ];
+
+
+      let currentGradientIndex = 0;
+
+      function darkenColor(color, amount) {
+        const [r, g, b] = color.match(/\d+/g).map(Number);
+        return `rgb(${Math.max(r - amount, 0)}, ${Math.max(g - amount, 0)}, ${Math.max(b - amount, 0)})`;
+      }
+
+      function updateGradient() {
+        const baseColors = baseGradients[currentGradientIndex];
+        const darkerColors = baseColors.map(color => darkenColor(color, 30));
+        const gradient = `linear-gradient(-100deg, ${darkerColors.join(', ')})`;
+        body.style.background = gradient;
+      }
+
+      changeGradientBtn.addEventListener('click', () => {
+        currentGradientIndex = (currentGradientIndex + 1) % baseGradients.length;
+        updateGradient();
+      });
+    </script>
+
+    <script>
+      document.getElementById('startStopBtnConvert').addEventListener('click', async () => {
+        const text = document.getElementById('floatingTextarea').value.trim();
+    
+        if (text) {
+          const response = await fetch('/convert_text', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({
+              'text': text
+            })
+          });
+    
+          if (response.ok) {
+            const imgBlob = await response.blob();
+            const imgUrl = URL.createObjectURL(imgBlob);
+            document.getElementById('signImages').innerHTML = `<img src="${imgUrl}" alt="Sign Language Image" style="width: 100%; max-width: 600px;" />`;
+          } else {
+            document.getElementById('signImages').innerHTML = '<p>Error converting text to sign language. Please try again.</p>';
+          }
+        } else {
+          document.getElementById('signImages').innerHTML = '<p>Please enter some text.</p>';
+        }
+      });
+    </script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFyMOmWd7rxuF1L4kJqi9Q5Gd5vH5T55t1Mb2jfYVVausqD0GqHDv8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+PmOsm5FS1mD39n5YpgBuiC2Fo4K" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

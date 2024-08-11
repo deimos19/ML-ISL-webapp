@@ -1,0 +1,358 @@
+*{
+    margin: 0;
+  }
+  body {
+    background: linear-gradient(-95deg, 
+        rgb(100, 149, 237),  /* Cornflower Blue */
+        rgb(148, 0, 211),    /* Dark Violet */
+        rgb(141, 64, 196),     /* Purple */
+        rgb(123, 104, 238),  /* Medium Slate Blue */
+        rgb(186, 85, 211),   /* Medium Orchid */
+        rgb(106, 90, 205),   /* Slate Blue */
+        rgb(72, 61, 139),    /* Dark Slate Blue */
+        rgb(147, 112, 219)   /* Medium Purple */
+    );
+    background-size: 400% 400%;
+    animation: animate 10s ease infinite;
+    transition: background 4s ease;
+  }
+  @keyframes animate{
+    0%{
+      background-position: 0 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0 50%;
+    }
+  }
+  .custom-hr{
+    border: 0;
+      height: 3px;
+      background: #ffffff; /* Change color as needed */
+      margin: 20px 0;
+      margin-top: 50px;
+  }
+  .navbar {
+    background: linear-gradient(to right, rgba(116, 115, 116, 0), rgba(150, 149, 150, 0));
+    backdrop-filter: blur(15px); /* Adjust the blur radius as needed */
+  }
+  
+  .navbar-brand {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .navbar-brand img{
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
+  .nav-link {
+    font-size: 18px;
+  }
+  .nav-item {
+    margin-right: 30px;
+  }
+  .dropdown-menu{
+    background: linear-gradient(to right, rgb(82, 8, 156), rgb(144, 10, 156));
+  }
+  .dropdown-item{
+    color: white;
+  }
+  #buttonNav {
+    background: linear-gradient(to right, rgb(143, 31, 255), rgb(214, 32, 231));
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    font-size: 18px;
+    transition: 0.8s;
+  }
+  #buttonNav:hover {
+    background: linear-gradient(to right, rgba(134, 32, 231, 0.849), rgb(76, 31, 255));
+  }
+  .btn{
+    background: none;
+    border: none;
+    padding-top: 10px;
+  }
+  .btn:hover{
+    background: none;
+  }
+  .btn i{
+    color: white;
+  }
+  .container{
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin-top: -50px;
+  }
+  .start{
+    display: flex;
+    width: 100%;
+    padding-top: 100px;
+  }
+  .start_img{
+    margin-top: 50px;
+    height: 300px;
+    width: 30%;
+    justify-content: center;
+  }
+  .info {
+    width: 60%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: left;
+    color: white;
+    position: relative;
+    margin-top: 100px;
+  }    
+  .info h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+  }
+  
+  .info h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 70px;
+  }
+  .getStarted {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+  }
+  .getStarted p {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .getStartedBtn {
+    margin-top: 50px;
+    width: 40%;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, rgb(143, 31, 255), rgb(214, 32, 231));
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.468), 0px 6px 20px rgba(0, 0, 0, 0.463);
+    border: 0px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+    transition: 0.5s;
+  }
+  .getStartedBtn:hover {
+    background: linear-gradient(to right, rgb(76, 31, 255), rgb(135, 32, 231));
+    color: rgb(255, 255, 255);
+    width: 50%;
+  }
+  .info2{
+    height: 500px;
+    width: 40%;
+    margin-top: 100px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+    align-items: center;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(-100deg,rgba(100, 148, 237, 0.514), rgba(148, 0, 211, 0.377), rgba(76, 0, 130, 0.432));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  }
+  .info2 form{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    text-align: left;
+  }
+  .btn1{
+    width: 100px;
+    padding: 5px;
+    border: 2px solid white;
+    background: none;
+    color: rgb(255, 255, 255);
+    border-radius: 0px;
+    font-size: 18px;
+    margin-left: 0px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  }
+  #About {
+    padding-top: 100px;
+    color: white;
+    text-align: center;
+  }
+  #toggleButton{
+    width: 10%;
+    font-size: 18px;
+    color: white;
+    background: none;
+    border: 1px solid;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .row{
+    margin-top: 100px;
+  }
+  .col {
+    text-align: left;
+  }
+  .col h1 {
+    font-size: 30px;
+  }
+  .col h3 {
+    font-size: 18px;
+  }
+  .col h2 {
+    margin-top: 50px;
+  }
+  #space{
+    padding-top: 100px;
+  }
+  #main{
+    background: linear-gradient(-100deg,rgba(100, 148, 237, 0.514), rgba(148, 0, 211, 0.377), rgba(76, 0, 130, 0.432));
+    border-radius: 20px;
+    margin-top: 100px;
+    align-items: center;
+    text-align: center;
+  }
+  #Live {
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: white;
+    align-items: center;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(-100deg,rgb(100, 149, 237), rgb(148, 0, 211), rgb(75, 0, 130));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  }
+  #Live p{
+    color: yellow;
+  }
+  .ToEng{
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: white;
+    align-items: center;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(-100deg,rgb(100, 149, 237), rgb(148, 0, 211), rgb(75, 0, 130));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  }
+  .ToEng p{
+    color: yellow;
+  }
+  #text-form{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #videoFeed{
+    padding: auto;
+    height: 500px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #startStopBtn{
+    margin-top: 10px;
+    background: linear-gradient(to right, rgb(159, 55, 218), rgb(32, 105, 231));
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.307), 0px 6px 20px rgba(0, 0, 0, 0.279);
+    border: none;
+    width: 150px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+  }
+  #startStopBtnConvert{
+    margin-top: 10px;
+    background: linear-gradient(to right, rgb(159, 55, 218), rgb(32, 105, 231));
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.307), 0px 6px 20px rgba(0, 0, 0, 0.279);
+    border: none;
+    width: 150px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+  }
+  .Live button {
+    margin-bottom: 10px;
+  }
+  .btn.active {
+    background: linear-gradient(to right, rgba(72, 0, 113, 0.418), rgba(0, 49, 134, 0.347));
+    border-radius: 20px;
+    color: white;
+  }
+  .btn-group{
+    display: flex;
+  }
+  .main-carousel{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: white;
+    text-align: center;
+  }
+  .carousel{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+  /* Accordion Styles */
+  .accordion{
+    text-align: center;
+  }
+  .accordion-button {
+    background: linear-gradient(to right, rgb(55, 0, 107), rgba(47, 149, 239, 0.59));
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+  }
+  .accordion-button:not(.collapsed) {
+    background: linear-gradient(to right, rgba(76, 31, 255, 0.242), rgba(135, 32, 231, 0.232));
+  }
+  .accordion-body {
+    background: linear-gradient(to right, rgb(83, 0, 172), rgb(117, 5, 178));
+    color: #fff; /* White text color */
+    border: 1px solid #240231; /* Border color matching expanded state */
+  }
+  /* Optional: Styling for Accordion Header */
+  .accordion-header {
+    background-color: #4d059b; /* Background color matching expanded state */
+  }
+  .accordion h1{
+    padding-top: 70px;
+    padding-bottom: 20px;
+    color: white;
+  }
+  footer{
+    margin-top: 100px;
+    align-items: center;
+    width: 100%;
+  }
+  .copyright{
+    text-align: center;
+    width: 100%;
+    color: white;
+  }
+  .col1{
+    width: 100%;
+    text-align: center;
+  }
+  .col1 p{
+    color: white;
+    font-size: 12px;
+  }
+  .col1 p a{
+    color: white;
+  }
+  footer p{
+    margin-left: 40px;
+    font-size: 15px;
+  }
+  footer p a{
+    color: white;
+  }
